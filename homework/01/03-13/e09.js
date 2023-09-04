@@ -1,3 +1,5 @@
+var process = require("node:process");
+
 let int1 = Number(process.argv[2]);
 let int2 = Number(process.argv[3]);
 

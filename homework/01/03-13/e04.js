@@ -11,17 +11,3 @@ while (i < number) {
   i++;
 }
 console.log(textOutput);
-
-let hello = "hello";
-let nan = Number(hello);
-let transformer = String(nan);
-console.log(transformer);
-
-i = 0;
-textOutput = "";
-while (i < 16) {
-  textOutput += "" + transformer;
-  i++;
-}
-
-console.log(textOutput + " batman! :D");

@@ -58,7 +58,7 @@ function main() {
     input = readlineSync.question("Choice? ");
     input = Number(input);
 
-    if ((input) => 0 && input <= 3) {
+    if (input <= 3) {
       if (input === 1) {
         add();
       }
