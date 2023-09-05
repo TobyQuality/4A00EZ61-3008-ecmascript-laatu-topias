@@ -5,6 +5,8 @@ function testingVariables() {
   var test2 = "this text is only shown inside function scope";
 }
 
+testingVariables();
+
 // this doesn't work, results in crash/error: console.log(test2);
 
 let test3 = "this variable's content can be changed";
