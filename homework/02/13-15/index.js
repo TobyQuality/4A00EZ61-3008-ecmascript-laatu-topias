@@ -6,7 +6,7 @@ args.splice(0, 2);
 
 // show all star wars characters
 if (args.length === 0) {
-  //get all star wars characters
+  // get all star wars characters
   axios
     .get(`https://swapi.dev/api/people/`)
     // get only results array from data object
@@ -27,21 +27,29 @@ if (args.length === 0) {
         return 0;
       });
     })
-    //put the sorted star wars characters inside a html ul element
+    // put the sorted star wars characters inside a html ul element
     .then((sortedList) => {
       let ulList = `<ul>`;
-      sortedList.map((r) => (ulList += `<li>${r.name}</li>`));
-      ulList += `</ul>`;
+      sortedList.map(
+        (r) =>
+          (ulList += `
+        <li>${r.name}</li>`)
+      );
+      ulList += "\n" + "</ul>";
       return ulList;
     })
     // output the ul list
-    .then((ulList) => console.log(ulList));
+    .then((ulList) => console.log(ulList))
+    .catch((err) => console.log(err));
 }
 
 // show data of a star wars character
 if (args.length === 1) {
   let id = Number(args[0]);
-  axios.get(`https://swapi.dev/api/people/${id}`).then((response) => {
-    console.log(response.data.name);
-  });
+  axios
+    .get(`https://swapi.dev/api/people/${id}`)
+    .then((response) => {
+      console.log(response.data.name);
+    })
+    .catch((err) => console.log(err));
 }
